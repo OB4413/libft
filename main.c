@@ -6,23 +6,15 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:43:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 08:54:32 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 12:10:39 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int main() {
-    char **result = ft_split(",,,expect,,hello,,,world,,,", ',');
-
-    // طباعة كل سلسلة في المصفوفة
-    for (int i = 0; result[i] != NULL; i++) {
-        printf("%s\n", result[i]);
-        free(result[i]); // تحرير الذاكرة
-    }
-    free(result); // تحرير المصفوفة
-
-    return 0;
+  printf("%s", ft_itoa(1));
+  return 0;
 }
 
 
