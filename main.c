@@ -6,17 +6,16 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:43:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 16:02:25 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 19:51:48 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main() {
-  printf("%s", ft_itoa(2147483647));
-  return 0;
-}
 
+int main() {
+    printf("%s", ft_strmapi("abcd", f));
+}
 
 /*static int	ft_start(char const *p, char c)
 {
