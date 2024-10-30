@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:40:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/29 11:10:22 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 08:47:29 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,51 +37,55 @@ static int	ft_count_word(char const *p, char c)
 	return (j);
 }
 
-static int	ft_start(char const *p, char c)
+char	*ft_alloc_and_cpy(char const *s, char c, size_t *i)
 {
-	int	i;
+	size_t	start;
+	size_t	len;
 
-	i = 0;
-	while (p[i] == c)
-		i++;
-	return (i);
+	start = *i;
+	len = 0;
+	while (s[*i] && s[*i] != c)
+	{
+		len++;
+		(*i)++;
+	}
+	return (ft_substr(s, start, len));
 }
 
-static int	ft_the_end(char const *p, char c, int i)
+static void	ft_free(char **array, size_t j)
 {
-	while (p[i] != c && p[i] != '\0')
+	while (j > 0)
 	{
-		i++;
+		free(array[j]);
+		j++;
 	}
-	return (i);
+	free(array);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**array;
 	size_t	i;
-	size_t	start;
 	size_t	j;
+	size_t	words;
+	char	**array;
 
-	array = (char **)malloc((ft_count_word(s, c) + 1) * sizeof(char *));
 	i = 0;
-	start = 0;
 	j = 0;
-	if (array == NULL)
+	words = ft_count_word(s, c);
+	array = malloc((words + 1) * sizeof(char *));
+	if (!array)
 		return (NULL);
-	i = ft_start(s, c);
-	while (s[i])
+	while (j < words)
 	{
-		start = i;
-		i = ft_the_end(s, c, i);
-		array[j] = (char *)malloc((i - start + 1) * sizeof(char));
-		if (array[j] == NULL)
-			free(array[j]);
-		memcpy(array[j], s + start, (i - start) * sizeof(char));
-		array[j][i - start] = '\0';
-		j++;
 		while (s[i] == c)
 			i++;
+		array[j] = ft_alloc_and_cpy(s, c, &i);
+		if (!array[j])
+		{
+			ft_free(array, j);
+			return (NULL);
+		}
+		j++;
 	}
 	array[j] = NULL;
 	return (array);
