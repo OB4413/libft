@@ -6,14 +6,14 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:43:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 12:10:39 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 12:31:49 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int main() {
-  printf("%s", ft_itoa(1));
+  printf("%s", ft_itoa(2147483647));
   return 0;
 }
 

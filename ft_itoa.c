@@ -6,13 +6,13 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:08:11 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 12:06:59 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 12:30:19 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_len_int(int n)
+static int	ft_len_int(long n)
 {
 	int	i;
 	int	j;
@@ -28,7 +28,7 @@ static int	ft_len_int(int n)
 	return (j);
 }
 
-static char	*ft_cpy_int(char *array, int n, int j, int k)
+static char	*ft_cpy_int(char *array, long n, int j, int k)
 {
 	int	i;
 
@@ -54,23 +54,22 @@ char	*ft_itoa(int n)
 	int		i;
 	int		j;
 	int		k;
-	int		b;
+	long	b;
 	char	*array;
 
 	i = 0;
 	k = 0;
 	j = 0;
-	if (n == 0)
-		return (NULL);
-	if (n < 0)
+	b = n;
+	if (b < 0)
 	{
-		n = n * (-1);
+		b = b * (-1);
 		j++;
 		k++;
 	}
-	j = j + ft_len_int(n);
+	j = j + ft_len_int(b);
 	array = calloc(j + 1, sizeof(char));
 	array[j] = '\0';
 	j--;
-	return (ft_cpy_int(array, n, j, k));
+	return (ft_cpy_int(array, b, j, k));
 }
