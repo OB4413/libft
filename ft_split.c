@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:40:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 08:47:29 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 09:05:54 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,10 @@ static int	ft_count_word(char const *p, char c)
 	j = 0;
 	while (p[i] == c)
 		i++;
-	while (*p)
+	while (p[i] != '\0')
 	{
-		if (p[i] == c)
+		if (p[i] != c && (i == 0 || p[i - 1] == c))
 			j++;
-		else if (p[i] == '\0')
-		{
-			if (p[i - 1] == c)
-				break ;
-			j++;
-			break ;
-		}
 		i++;
 	}
 	return (j);
@@ -44,7 +37,7 @@ char	*ft_alloc_and_cpy(char const *s, char c, size_t *i)
 
 	start = *i;
 	len = 0;
-	while (s[*i] && s[*i] != c)
+	while (s[*i] != '\0' && s[*i] != c)
 	{
 		len++;
 		(*i)++;

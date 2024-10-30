@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 11:31:49 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/29 11:12:48 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 09:46:57 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t int	k;
 
 	i = ft_strlen(s1) + ft_strlen(s2);
-	p = ft_calloc(i, sizeof(char));
+	p = ft_calloc(i + 1, sizeof(char));
 	j = 0;
 	k = 0;
 	if (p == NULL)
@@ -36,5 +36,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 		k++;
 	}
+	p[i] = '\0';
 	return (p);
 }

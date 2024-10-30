@@ -6,14 +6,14 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:43:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/29 19:32:02 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 08:54:32 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int main() {
-    char **result = ft_split(",expect,hello,world,", ',');
+    char **result = ft_split(",,,expect,,hello,,,world,,,", ',');
 
     // طباعة كل سلسلة في المصفوفة
     for (int i = 0; result[i] != NULL; i++) {
