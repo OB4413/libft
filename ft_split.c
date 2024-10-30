@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:40:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 09:05:54 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 09:50:55 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	words = ft_count_word(s, c);
 	array = malloc((words + 1) * sizeof(char *));
-	if (!array)
+	if (array == NULL || s == NULL)
 		return (NULL);
 	while (j < words)
 	{
