@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:08:11 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 12:30:19 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/30 16:00:49 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,18 @@ char	*ft_itoa(int n)
 	k = 0;
 	j = 0;
 	b = n;
-	if (b < 0)
+	if (b <= 0)
 	{
 		b = b * (-1);
 		j++;
 		k++;
 	}
 	j = j + ft_len_int(b);
-	array = calloc(j + 1, sizeof(char));
+	array = ft_calloc(j + 1, sizeof(char));
+	if (array == NULL)
+		return (NULL);
+	if (n == 0)
+		array[0] = '0';
 	array[j] = '\0';
 	j--;
 	return (ft_cpy_int(array, b, j, k));
