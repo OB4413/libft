@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:33:05 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/31 13:25:00 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/31 15:26:17 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,4 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 		ft_putchar_fd(n + '0', fd);
-}
-
-int	main(void)
-{
-	ft_putnbr_fd(-2147483648, 1);
 }

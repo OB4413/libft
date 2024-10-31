@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:23:13 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/31 13:20:49 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/31 18:33:34 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
 	i = 0;
-	if (len_src >= dstsize)
+	if (len_dst >= dstsize)
 		return (dstsize + len_src);
 	while (i < len_src && len_dst + i < dstsize - 1)
 	{
 		dst[len_dst + i] = src[i];
 		i++;
 	}
-	dst[len_dst] = '\0';
+	dst[len_dst + i] = '\0';
 	return (len_dst + len_src);
 }

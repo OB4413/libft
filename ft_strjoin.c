@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 11:31:49 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 09:46:57 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/31 15:18:39 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char		*p;
-	int			i;
-	size_t int	j;
-	size_t int	k;
+	size_t		i;
+	size_t		j;
+	size_t		k;
 
 	i = ft_strlen(s1) + ft_strlen(s2);
 	p = ft_calloc(i + 1, sizeof(char));
