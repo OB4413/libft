@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:43:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 19:51:48 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/31 10:17:13 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,18 @@
 
 
 int main() {
-    printf("%s", ft_strmapi("abcd", f));
+    const char *original = "hello world";
+    char *modified = ft_strmapi(original, f);
+
+    if (modified != NULL) {
+        printf("السلسلة الأصلية: %s\n", original);
+        printf("السلسلة بعد التطبيق: %s\n", modified);
+        free(modified); // تحرير الذاكرة
+    } else {
+        printf("فشل في تخصيص الذاكرة\n");
+    }
+
+    return 0;
 }
 
 /*static int	ft_start(char const *p, char c)
