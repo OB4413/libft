@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 18:55:40 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/31 10:32:44 by obarais          ###   ########.fr       */
+/*   Updated: 2024/10/31 12:13:35 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ char	**ft_split(char const *s, char c);
 char    *ft_itoa(int n);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
+void    ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
 
 #endif
