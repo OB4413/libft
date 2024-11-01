@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:35:50 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/31 17:14:19 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/01 11:21:22 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
+	if (dstsize == 1)
+		dst[0] = '\0';
 	return (len_src);
 }

@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:40:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/30 09:50:55 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/01 15:33:50 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ static void	ft_free(char **array, size_t j)
 {
 	while (j > 0)
 	{
+		j--;
 		free(array[j]);
-		j++;
 	}
 	free(array);
 }
@@ -68,7 +68,7 @@ char	**ft_split(char const *s, char c)
 	array = malloc((words + 1) * sizeof(char *));
 	if (array == NULL || s == NULL)
 		return (NULL);
-	while (j < words)
+	while (j < words && s[i] != '\0')
 	{
 		while (s[i] == c)
 			i++;

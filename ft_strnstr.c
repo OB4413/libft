@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:06:13 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/29 11:15:46 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/01 15:44:54 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		while (haystack[i + j] == needle[j] && (i + j) < len)
 		{
 			j++;
+			if (needle[j] == '\0')
+				return ((char *)(haystack + i));
 		}
-		if (needle[j] == '\0')
-			return ((char *)(haystack + i));
 		i++;
 		j = 0;
 	}
