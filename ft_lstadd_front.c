@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 11:48:51 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/02 12:56:44 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/02 21:48:14 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (new == NULL)
+	if (new != NULL)
 	{
 		new->next = *lst;
 		*lst = new;
