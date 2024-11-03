@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 13:07:58 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/02 15:06:58 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/03 10:50:54 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 	}
 	return (i);
+	i
 }
