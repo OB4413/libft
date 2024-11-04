@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:56:57 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/03 15:39:55 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/04 08:20:40 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,21 @@
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
     t_list  *list;
-    t_list  *temp;
+    t_list  *new;
 
-    list = (t_list *)malloc(sizeof(t_list));
-    if (list == NULL)
+    list = NULL;
+    if (del == NULL || f == NULL || lst == NULL)
         return (NULL);
     while (lst != NULL)
     {
-        list->content = f(&lst->content);
-        temp = lst->next;
-        list = list->next;
-        del(&lst->content);
-        free()
+        new = ft_lstnew(f(lst->content));
+        if (new == NULL)
+        {
+            ft_lstclear(&list, del);
+            return (NULL);
+        }
+        ft_lstadd_back(&list, new);
+        lst = lst->next;
     }
-    
+    return (list);
 }
