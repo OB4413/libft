@@ -6,7 +6,7 @@
 #    By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 12:57:01 by obarais           #+#    #+#              #
-#    Updated: 2024/11/04 15:51:37 by obarais          ###   ########.fr        #
+#    Updated: 2024/11/04 16:52:54 by obarais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,13 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rcs $(NAME) $?
-	
+	ar rcs $(NAME) $(OBJECTS)
+
 bonus: $(OBJECTS) $(BOBJECTS)
-	ar rcs $(NAME) $?
+	ar rcs $(NAME) $(OBJECTS) $(BOBJECTS)
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) $?
+	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
 	rm -f $(OBJECTS) $(BOBJECTS)
