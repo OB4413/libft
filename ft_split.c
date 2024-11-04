@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:40:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/01 19:41:28 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/04 11:46:47 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_alloc_and_cpy(char const *s, char c, size_t *i)
 	return (ft_substr(s, start, len));
 }
 
-static void	ft_free(char **array, size_t j)
+static char	**ft_free(char **array, size_t j)
 {
 	while (j > 0)
 	{
@@ -53,6 +53,7 @@ static void	ft_free(char **array, size_t j)
 		free(array[j]);
 	}
 	free(array);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -62,11 +63,13 @@ char	**ft_split(char const *s, char c)
 	size_t	words;
 	char	**array;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	j = 0;
 	words = ft_count_word(s, c);
-	array = malloc((words + 1) * sizeof(char *));
-	if (array == NULL || s == NULL)
+	array = (char **)malloc((words + 1) * sizeof(char *));
+	if (array == NULL)
 		return (NULL);
 	while (j < words && s[i] != '\0')
 	{
@@ -74,10 +77,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		array[j] = ft_alloc_and_cpy(s, c, &i);
 		if (!array[j])
-		{
-			ft_free(array, j);
-			return (NULL);
-		}
+			return (ft_free(array, j));
 		j++;
 	}
 	array[j] = NULL;
