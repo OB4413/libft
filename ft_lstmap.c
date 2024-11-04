@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/03 10:02:51 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/03 13:02:53 by obarais          ###   ########.fr       */
+/*   Created: 2024/11/03 14:56:57 by obarais           #+#    #+#             */
+/*   Updated: 2024/11/03 15:39:55 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lbft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *));
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *temp;
+    t_list  *list;
+    t_list  *temp;
 
-	while (*lst != NULL && del != NULL)
-	{
-		temp = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
-		*lst = temp;
-	}
+    list = (t_list *)malloc(sizeof(t_list));
+    if (list == NULL)
+        return (NULL);
+    while (lst != NULL)
+    {
+        list->content = f(&lst->content);
+        temp = lst->next;
+        list = list->next;
+        del(&lst->content);
+        free()
+    }
+    
 }
