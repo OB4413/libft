@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 18:55:40 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/04 17:00:27 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/05 09:15:23 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {

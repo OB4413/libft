@@ -6,7 +6,7 @@
 #    By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 12:57:01 by obarais           #+#    #+#              #
-#    Updated: 2024/11/04 16:52:54 by obarais          ###   ########.fr        #
+#    Updated: 2024/11/04 21:58:46 by obarais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ BSOURCES = \
 OBJECTS = $(SOURCES:.c=.o)
 BOBJECTS = $(BSOURCES:.c=.o)
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
