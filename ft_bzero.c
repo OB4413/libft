@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:41:24 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/27 10:28:29 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/05 18:32:21 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*p;
 	size_t			i;
 
-	p = s;
+	p = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
