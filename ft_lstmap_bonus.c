@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:56:57 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/04 17:57:01 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/06 09:43:00 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*list;
 	t_list	*new;
-	t_list	*content;
+	void	*content;
 
 	list = NULL;
 	if (del == NULL || f == NULL || lst == NULL)

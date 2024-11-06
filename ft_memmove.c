@@ -6,13 +6,13 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 13:12:53 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/01 08:46:59 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/06 08:44:41 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	copy_backward(unsigned char *dst, const unsigned char *src, size_t len)
+static void	copy_ward(unsigned char *dst, const unsigned char *src, size_t len)
 {
 	while (len > 0)
 	{
@@ -41,6 +41,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	if (p > b)
-		copy_backward(p, b, len);
+		copy_ward(p, b, len);
 	return (dst);
 }
