@@ -6,7 +6,7 @@
 #    By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 12:57:01 by obarais           #+#    #+#              #
-#    Updated: 2024/11/04 21:58:46 by obarais          ###   ########.fr        #
+#    Updated: 2024/11/07 10:15:15 by obarais          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,5 +46,7 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.SECONDARY: $(OBJECTS) $(BOBJECTS)
 
 .PHONY: all bonus clean fclean re
