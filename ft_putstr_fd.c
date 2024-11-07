@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:13:00 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/06 12:31:54 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/07 12:55:25 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	if (fd < 0)
+	if (fd < 0 || s == NULL)
 		return ;
 	while (s[i] != '\0')
 	{

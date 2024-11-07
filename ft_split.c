@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:40:55 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/04 13:20:23 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/07 11:29:11 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_count_word(char const *p, char c)
 	return (j);
 }
 
-char	*ft_alloc_and_cpy(char const *s, char c, size_t *i)
+static char	*ft_alloc_and_cpy(char const *s, char c, size_t *i)
 {
 	size_t	start;
 	size_t	len;
