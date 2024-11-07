@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 08:35:04 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/27 10:28:32 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/07 21:27:19 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
 
+	if (size && count > SIZE_MAX / size)
+		return (NULL);
 	p = malloc(count * size);
 	if (p == NULL)
 		return (NULL);
