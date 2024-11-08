@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 12:55:19 by obarais           #+#    #+#             */
-/*   Updated: 2024/11/08 17:18:20 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/08 17:33:46 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	t_list	*temp;
 
 	temp = lst;
-	while (lst != NULL)
+	while (temp != NULL)
 	{
 		f(temp->content);
 		temp = temp->next;
