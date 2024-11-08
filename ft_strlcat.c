@@ -6,7 +6,7 @@
 /*   By: obarais <obarais@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:23:13 by obarais           #+#    #+#             */
-/*   Updated: 2024/10/31 18:33:34 by obarais          ###   ########.fr       */
+/*   Updated: 2024/11/08 10:19:13 by obarais          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	len_src;
 	size_t	i;
 
+	if (dst == NULL && src != NULL && dstsize == 0)
+		return (ft_strlen(src));
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
 	i = 0;
